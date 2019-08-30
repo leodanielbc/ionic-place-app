@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'lugar.html',
 })
 export class LugarPage {
-
+  nombreLugar:string='';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.nombreLugar = navParams.get('nombre');
   }
 
   ionViewDidLoad() {
