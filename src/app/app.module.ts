@@ -14,15 +14,16 @@ import { TerceraPage } from '../pages/tercera/tercera';
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireModule} from "angularfire2";
+import { LugaresService } from '../services/lugares.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDWf8DgxQfOPC7mw5Rn7Fu55nvrmcQYcuE",
-  authDomain: "ionicbasicplatzi01.firebaseapp.com",
-  databaseURL: "https://ionicbasicplatzi01.firebaseio.com",
-  projectId: "ionicbasicplatzi01",
-  storageBucket: "",
-  messagingSenderId: "271965697524",
-  appId: "1:271965697524:web:9c1c4f95ea84fc7d"
+    authDomain: "ionicbasicplatzi01.firebaseapp.com",
+    databaseURL: "https://ionicbasicplatzi01.firebaseio.com",
+    projectId: "ionicbasicplatzi01",
+    storageBucket: "ionicbasicplatzi01.appspot.com",
+    messagingSenderId: "271965697524",
+    appId: "1:271965697524:web:9c1c4f95ea84fc7d"
 };
 
 @NgModule({
@@ -54,7 +55,8 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LugaresService
   ]
 })
 export class AppModule {}
