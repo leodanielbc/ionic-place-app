@@ -11,7 +11,28 @@
 </ion-header>
 
 <ion-content padding>
-  {{nombreLugar}}
-  <button ion-button block (click)="navigateBack()">Regresar</button>
-  <button ion-button block (click)="navigateToThird()">Ir a Tercera</button>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Lugar</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Dirección</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-list>
+        <ion-item>
+          <ion-label>Categoría</ion-label>
+          <ion-select>
+            <ion-option value="AireLibre">Aire Libre</ion-option>
+            <ion-option value="LugarCerrado">Lugar Cerrado</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button ion-button full>Guardar Lugar</button>
 </ion-content>

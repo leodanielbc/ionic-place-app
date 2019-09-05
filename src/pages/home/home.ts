@@ -20,6 +20,9 @@ export class HomePage {
     this.navCtrl.push(LugarPage, {nombre:name});//el parametro se llama nombre, el cual va ser obtenido en lugar.ts
   }
   irVistaDetalle(){
-    alert('Hola');
+    this.navCtrl.push(LugarPage, {lugar:{}});
+  }
+  viewDetalleLugar(lugar){
+    this.navCtrl.push(LugarPage, {lugar:lugar});
   }
 }
