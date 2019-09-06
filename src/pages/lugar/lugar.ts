@@ -23,8 +23,12 @@ export class LugarPage {
   }
 
   guardarLugar(){
-    this.lugar.id = Date.now();
+    if(!this.lugar.id){//si no trae el id, le asignamos
+      this.lugar.id = Date.now();
+    }
     this.lugaresService.createLugar(this.lugar);
+    alert('Lugar guardado con éxito!');
+    this.navCtrl.pop();
     console.log(this.lugar);
   }
 }
