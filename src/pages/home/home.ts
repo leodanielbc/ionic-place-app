@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LugarPage } from '../lugar/lugar';
+import { LugaresService } from '../../services/lugares.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  lugares: any=[
-    {nombre:'Leonardo', direccion:'Catamayo', categoria:'Categoria 1'},
-    {nombre:'Daniel', direccion:'Catamayo', categoria:'Categoria 1'},
-    {nombre:'Maria', direccion:'Catamayo', categoria:'Categoria 1'}
-  ];
-  constructor(public navCtrl: NavController) {
+  lugares: any=[];
+  constructor(public navCtrl: NavController, public lugaresService: LugaresService) {
+    this.lugaresService.getLugares().valueChanges()//con el evento valueChange obtiene de la bd de FB el contenido o la lista de lugares y se actualiza automaticamente si un elemento ha sido cambiado
+    .subscribe((lugaresFB)=>{
+        this.lugares=lugaresFB;
+    },
+    (err)=>{
+      console.log("probleme : ", err)
+    });
 
   }
   navegarALugar(name){
