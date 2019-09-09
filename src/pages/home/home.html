@@ -11,6 +11,10 @@
     <ion-list>
       <ion-item-sliding *ngFor="let lugar of lugares">
         <ion-item (click)="viewDetalleLugar(lugar)">
+          <ion-avatar item-end>
+              <img *ngIf="lugar.imagen"src="{{lugar.imagen}}">
+              <img *ngIf="!lugar.imagen"src="../../assets/imgs/logo.png">
+          </ion-avatar>
           <h2>{{lugar.nombre}}</h2>
           <h2>{{lugar.direccion}}</h2>
           <p>{{lugar.categoria}}</p>

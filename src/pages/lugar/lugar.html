@@ -13,6 +13,18 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
+          <ion-label fixed>Imagen</ion-label>
+          <ion-avatar item-end>
+            <img *ngIf="lugar.imagen"src="{{lugar.imagen}}">
+            <img *ngIf="!lugar.imagen"src="../../assets/imgs/logo.png">
+          </ion-avatar>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Cargar Imagen</ion-label>
+        <ion-input type="file" (change)="uploadPhoto($event)"></ion-input>
+    </ion-item>
+
+    <ion-item>
       <ion-label floating>Lugar</ion-label>
       <ion-input type="text" [(ngModel)]="lugar.nombre"></ion-input>
     </ion-item>
