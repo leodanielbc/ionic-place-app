@@ -4,7 +4,6 @@ import { TerceraPage } from './tercera';
 
 @NgModule({
   declarations: [
-    TerceraPage,
   ],
   imports: [
     IonicPageModule.forChild(TerceraPage),

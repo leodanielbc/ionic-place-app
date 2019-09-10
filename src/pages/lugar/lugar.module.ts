@@ -4,7 +4,6 @@ import { LugarPage } from './lugar';
 
 @NgModule({
   declarations: [
-    LugarPage,
   ],
   imports: [
     IonicPageModule.forChild(LugarPage),

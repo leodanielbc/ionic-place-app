@@ -32,6 +32,11 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
+    LugarPage,
+    PerfilPage,
+    TabsPage,
+    TerceraPage,
+    LoginPage,
 
   ],
   imports: [
