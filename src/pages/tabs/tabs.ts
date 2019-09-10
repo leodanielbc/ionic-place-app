@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { PerfilPage } from '../perfil/perfil';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the TabsPage page.
@@ -18,7 +19,10 @@ import { PerfilPage } from '../perfil/perfil';
 export class TabsPage {
   tab1Root= HomePage;
   tab2Root = PerfilPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public modalCtrl: ModalController) {
+    let modal = this.modalCtrl.create(LoginPage);
+    modal.present();
   }
 
   ionViewDidLoad() {
